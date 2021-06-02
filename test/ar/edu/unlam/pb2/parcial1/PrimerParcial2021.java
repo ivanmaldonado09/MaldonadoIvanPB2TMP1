@@ -266,10 +266,41 @@ class PrimerParcial2021 {
 	@Test
 	public void queLuegoDeDevueltaUnaPeliculaSePuedaAlquilar() {
 		// Preparación
+				final Integer CODIGO_ESPERADO = 1;
+				final String DESCRIPCION_ESPERADA = "El Cisne Negro";
+				final Genero GENERO_ESPERADO = Genero.SUSPENSO;
+				final Integer ANO_DE_ESTRENO_ESPERADO = 2010;
+				final String DIRECTOR_ESPERADO = "Darren Aronofsky";
+				final String ACTOR_1_ESPERADO = "Natalie Portman";
+				final String NOMBRE_VIDEOCLUB = "Blockbuster";
+				final Integer CODIGO_CLIENTE_ESPERADO = 1;
+				final String NOMBRE_ESPERADO = "Camila";
+				final String APELLIDO_ESPERADO = "Privado";
+				final Integer EDAD_ESPERADA = 23;
+				final Integer CODIGO_CLIENTE_ESPERADO2 = 2;
+				final String NOMBRE_ESPERADO2 = "Ivan";
+				final String APELLIDO_ESPERADO2 = "Maldonado";
+				final Integer EDAD_ESPERADA2 = 20;
+				final Estado ESTADO_INICIAL_ESPERADO = Estado.DISPONIBLE;
+				final Estado ESTADO_FINAL_ESPERADO = Estado.ALQUILADO;
 
-		// Ejecución
+				// Ejecución
+				Videoclub video = new Videoclub(NOMBRE_VIDEOCLUB);
+				Producto nuevoProducto = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO,
+						ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
+				Cliente nuevoCliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+				Cliente nuevoCliente2 = new Cliente(CODIGO_CLIENTE_ESPERADO2, APELLIDO_ESPERADO2, NOMBRE_ESPERADO2, EDAD_ESPERADA2);
 
-		// Validación
+				video.agregarProducto(nuevoProducto);
+				
+
+				// Validación
+				assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
+				assertTrue(video.alquilar(nuevoProducto, nuevoCliente));
+				assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
+				assertTrue(video.devolver(nuevoProducto, nuevoCliente));
+				assertTrue(video.alquilar(nuevoProducto, nuevoCliente2));
+				assertEquals(NOMBRE_ESPERADO2, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
 	}
 
 	@Test
@@ -280,7 +311,7 @@ class PrimerParcial2021 {
 		final Genero GENERO_ESPERADO = Genero.SUSPENSO;
 		final Integer ANO_DE_ESTRENO_ESPERADO = 2010;
 		final String DIRECTOR_ESPERADO = "Darren Aronofsky";
-		final String ACTOR_1_ESPERADO = "Natalie Portman";
+		
 		final String NOMBRE_VIDEOCLUB = "Blockbuster";
 		final Integer CODIGO_CLIENTE_ESPERADO = 1;
 		final String NOMBRE_ESPERADO = "Camila";
@@ -293,7 +324,7 @@ class PrimerParcial2021 {
 		Videoclub video = new Videoclub(NOMBRE_VIDEOCLUB);
 		Producto nuevoProducto = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO,
 				ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
-		Cliente nuevoCliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+		Cliente nuevoCliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 
 		video.agregarProducto(nuevoProducto);
 
