@@ -4,25 +4,24 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BooleanSupplier;
 
-public class Pelicula implements Alquilable, Vendible{
+public class Pelicula extends Producto implements Alquilable, Vendible {
 
-	private Integer codigo;
-	private String descripcion;
+	
 	private Genero genero;
 	private Integer anoEstreno;
 	private String director;
-	private List <String> actores;
+	private List<String> actores;
 	private Double precioVenta;
-	
-	public Pelicula(Integer codigo, String descripcion, Genero genero,
-			Integer anoEstreno, String director) {
-		this.codigo = codigo;
-		this.descripcion = descripcion;
+	private Double precioAlquiler;
+
+	public Pelicula(Integer codigo, String descripcion, Genero genero, Integer anoEstreno, String director) {
+		super(codigo, descripcion);
 		this.genero = genero;
 		this.anoEstreno = anoEstreno;
 		this.director = director;
 		this.actores = new LinkedList<>();
-		this.precioVenta = 0.0; 
+		this.precioVenta = 0.0;
+		this.precioAlquiler = 0.0;
 	}
 
 	public Integer getCodigo() {
@@ -69,19 +68,24 @@ public class Pelicula implements Alquilable, Vendible{
 	public Double precioDeVenta() {
 		return this.precioVenta;
 	}
-	
+
 	public void setPrecioVenta(Double precioVenta) {
 		this.precioVenta = precioVenta;
 	}
 
 	@Override
 	public Double precioDeAlquiler() {
-		return null;
+		return this.precioAlquiler;
+	}
+
+	@Override
+	public void setPrecioAlquiler(Double precioAlquiler) {
+		this.precioAlquiler = precioAlquiler;
 	}
 
 	public void agregarActor(String actorAAgregar) {
 		this.actores.add(actorAAgregar);
-		
+
 	}
 
 	public Boolean actua(String actor) {

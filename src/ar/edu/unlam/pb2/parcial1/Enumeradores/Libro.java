@@ -1,20 +1,15 @@
 package ar.edu.unlam.pb2.parcial1.Enumeradores;
 
-public class Libro implements Vendible{
+public class Libro extends Producto implements Vendible {
 
-	private Integer codigo;
-	private String descripcion;
 	private String autor;
 	private String editorial;
-	
-	
-	public Libro(Integer codigo, String descripcion, String autor,
-			String editorial) {
-	this.codigo = codigo;
-	this.descripcion = descripcion;
-	this.autor = autor;
-	this.editorial = editorial;
-		
+
+	public Libro(Integer codigo, String descripcion, String autor, String editorial) {
+		super(codigo, descripcion);
+		this.autor = autor;
+		this.editorial = editorial;
+
 	}
 
 	public Integer getCodigo() {
@@ -57,7 +52,7 @@ public class Libro implements Vendible{
 	@Override
 	public void setPrecioVenta(Double precio) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

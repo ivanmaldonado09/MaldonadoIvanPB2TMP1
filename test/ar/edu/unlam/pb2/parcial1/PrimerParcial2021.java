@@ -4,13 +4,16 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Alquilable;
+import ar.edu.unlam.pb2.parcial1.Enumeradores.Cliente;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Comestible;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Estado;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Genero;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Libro;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Pelicula;
+import ar.edu.unlam.pb2.parcial1.Enumeradores.Producto;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.TipoDeConsola;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Vendible;
+import ar.edu.unlam.pb2.parcial1.Enumeradores.Videoclub;
 import ar.edu.unlam.pb2.parcial1.Enumeradores.Videojuego;
 
 class PrimerParcial2021 {
@@ -167,8 +170,9 @@ class PrimerParcial2021 {
 		// Validación
 		assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 		assertTrue(video.vender(nuevoProducto, nuevoCliente));
-		assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
+		
 		assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
+		
 	}
 	
 	@Test

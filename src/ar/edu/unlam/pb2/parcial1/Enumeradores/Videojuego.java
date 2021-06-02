@@ -1,15 +1,13 @@
 package ar.edu.unlam.pb2.parcial1.Enumeradores;
 
-public class Videojuego implements Alquilable{
+public class Videojuego extends Producto implements Alquilable{
 
-	private Integer codigo;
-	private String descripcion;
+
 	private TipoDeConsola tipo;
 	private Double precioAlquiler;
 	
 	public Videojuego(Integer codigo, String descripcion, TipoDeConsola tipo) {
-		this.codigo = codigo;
-		this.descripcion = descripcion;
+		super(codigo, descripcion);
 		this.tipo = tipo;
 		this.precioAlquiler = 0.0;
 	}

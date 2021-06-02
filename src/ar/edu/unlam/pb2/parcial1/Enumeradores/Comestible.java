@@ -1,13 +1,11 @@
 package ar.edu.unlam.pb2.parcial1.Enumeradores;
 
-public class Comestible implements Vendible{
+public class Comestible extends Producto implements Vendible {
 
-	private Integer codigo;
-	private String descripcion;
-	
 	public Comestible(Integer codigo, String descripcion) {
-	this.codigo = codigo;
-	this.descripcion = descripcion;
+		super(codigo, descripcion);
+		this.codigo = codigo;
+		this.descripcion = descripcion;
 	}
 
 	public Integer getCodigo() {
@@ -34,7 +32,7 @@ public class Comestible implements Vendible{
 	@Override
 	public void setPrecioVenta(Double precio) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
