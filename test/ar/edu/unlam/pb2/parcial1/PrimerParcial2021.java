@@ -167,7 +167,7 @@ class PrimerParcial2021 {
 		// Ejecución
 		Videoclub video = new Videoclub(NOMBRE_VIDEOCLUB);
 		Producto nuevoProducto = new Libro(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, AUTOR_ESPERADO, EDITORIAL_ESPERADA);
-		Cliente nuevoCliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+		Cliente nuevoCliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 
 		video.agregarProducto(nuevoProducto);
 
@@ -187,7 +187,6 @@ class PrimerParcial2021 {
 		final Genero GENERO_ESPERADO = Genero.SUSPENSO;
 		final Integer ANO_DE_ESTRENO_ESPERADO = 2010;
 		final String DIRECTOR_ESPERADO = "Darren Aronofsky";
-		final String ACTOR_1_ESPERADO = "Natalie Portman";
 		final String NOMBRE_VIDEOCLUB = "Blockbuster";
 		final Integer CODIGO_CLIENTE_ESPERADO = 1;
 		final String NOMBRE_ESPERADO = "Camila";
@@ -200,7 +199,7 @@ class PrimerParcial2021 {
 		Videoclub video = new Videoclub(NOMBRE_VIDEOCLUB);
 		Producto nuevoProducto = new Pelicula(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, GENERO_ESPERADO,
 				ANO_DE_ESTRENO_ESPERADO, DIRECTOR_ESPERADO);
-		Cliente nuevoCliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+		Cliente nuevoCliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 
 		video.agregarProducto(nuevoProducto);
 
@@ -226,7 +225,7 @@ class PrimerParcial2021 {
 		// Ejecución
 		Producto comestible = new Comestible(CODIGO_ESPERADO, DESCRIPCION_ESPERADA);
 		Videoclub ypf = new Videoclub(NOMBRE_VIDEOCLUB);
-		Cliente cliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+		Cliente cliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 		ypf.agregarProducto(comestible);
 		ypf.vender(comestible, cliente);
 
@@ -251,9 +250,9 @@ class PrimerParcial2021 {
 		final Estado ESTADO_INICIAL_ESPERADO = Estado.ALQUILADO;
 		final Estado ESTADO_FINAL_ESPERADO = Estado.ALQUILADO;
 		// Ejecución
-		Producto comestible = new Videojuego(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, CONSOLA_ESPERADA);
+		Producto comestible = new Videojuego(CODIGO_ESPERADO, DESCRIPCION_ESPERADA, CONSOLA_ESPERADA); 
 		Videoclub sony = new Videoclub(NOMBRE_VIDEOCLUB);
-		Cliente cliente = new Cliente(CODIGO_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
+		Cliente cliente = new Cliente(CODIGO_CLIENTE_ESPERADO, APELLIDO_ESPERADO, NOMBRE_ESPERADO, EDAD_ESPERADA);
 		sony.agregarProducto(comestible);
 		sony.alquilar(comestible, cliente);
 
@@ -271,7 +270,6 @@ class PrimerParcial2021 {
 				final Genero GENERO_ESPERADO = Genero.SUSPENSO;
 				final Integer ANO_DE_ESTRENO_ESPERADO = 2010;
 				final String DIRECTOR_ESPERADO = "Darren Aronofsky";
-				final String ACTOR_1_ESPERADO = "Natalie Portman";
 				final String NOMBRE_VIDEOCLUB = "Blockbuster";
 				final Integer CODIGO_CLIENTE_ESPERADO = 1;
 				final String NOMBRE_ESPERADO = "Camila";
