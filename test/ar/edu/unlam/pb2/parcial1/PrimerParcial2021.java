@@ -298,9 +298,12 @@ class PrimerParcial2021 {
 				assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 				assertTrue(video.alquilar(nuevoProducto, nuevoCliente));
 				assertEquals(NOMBRE_ESPERADO, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
+				assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 				assertTrue(video.devolver(nuevoProducto, nuevoCliente));
+				assertEquals(ESTADO_INICIAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 				assertTrue(video.alquilar(nuevoProducto, nuevoCliente2));
 				assertEquals(NOMBRE_ESPERADO2, video.buscarProducto(nuevoProducto).getQuienPoseeElProducto().getNombre());
+				assertEquals(ESTADO_FINAL_ESPERADO, video.buscarProducto(nuevoProducto).getEstadoActual());
 	}
 
 	@Test
